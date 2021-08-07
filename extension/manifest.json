@@ -6,11 +6,9 @@
         "default_title": "Kaufer",
         "default_popup": "popup.html"
     },
-    "background": {
-        "scripts": ["background.js"]
-    },
     "permissions": [
         "http://*/*",
-        "https://*/*"
+        "https://*/*",
+        "tabs"
     ]
 }
