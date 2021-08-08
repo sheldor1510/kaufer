@@ -3,6 +3,7 @@ const twitter = document.getElementById('twitter');
 const main = document.getElementById('main');
 const footer = document.getElementById('footer');
 const heading = document.getElementById('heading');
+const loader = document.getElementById('loading');
 
 const formatName = (productName) => {
     if (productName.includes('(')) {
@@ -90,10 +91,12 @@ window.onload = () => {
                     document.getElementById('logo').style.display = 'none'
                     const productName = results[0].trim()
                     document.getElementById('productName').innerText = formatName(productName) + '...'
+                    loader.style.display = 'flex';
                     fetch(`https://kaufer.anshulsaha.repl.co/yt?productName=${productName}`)
                     .then(async (resp) => {
                         const response = await resp.json()
                         ytSearchResults = response
+                        loader.style.display = 'none';
                         ytInflator()
                         fetch(`https://kaufer.anshulsaha.repl.co/tw?productName=${productName}`)
                         .then(async (twresp) => {
