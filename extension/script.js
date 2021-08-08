@@ -85,7 +85,7 @@ window.onload = () => {
             }, (results) => {
                 if (results[0]) {
                     main.style.backgroundColor = '#FAB4B4'
-                    main.style.overflow = 'scroll'
+                    main.style.overflowY = 'scroll'
                     document.getElementById('tabs').style.display = 'flex'
                     document.getElementById('logo').style.display = 'none'
                     const productName = results[0].trim()
